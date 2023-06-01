@@ -25,3 +25,15 @@ spec:
             - name: frontend-port
               containerPort: 8000
               protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: miapp-frontend
+spec:
+    selector:
+        app: miapp-frontend
+    ports:
+        - protocol: TCP
+          port: 8000
+          targetPort: 8000
